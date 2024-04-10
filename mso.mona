@@ -1,0 +1,45 @@
+m2l-tree;
+
+#setup
+var2 dummy;
+var2 fusion;
+var2 forget0, forget1, forget2;
+var2 edge_0_1, edge_0_2, edge_1_2;
+
+#make sure each node is is one of the above
+pred xor(var0 x, var0 y) = x | y & ~(x&y);
+pred defined(var1 x) = xor(x in fusion,xor(x in forget0,xor(x in forget1,xor(x in forget2,xor(x in edge_0_1,xor(x in edge_0_2,xor(x in edge_1_2,x in dummy)))))));
+
+#macro predicates
+pred has_0(var1 x) = x in edge_0_1 | x in edge_0_2 ;
+pred has_1(var1 x) = x in edge_0_1 | x in edge_1_2 ;
+pred has_2(var1 x) = x in edge_0_2 | x in edge_1_2 ;
+
+
+pred forget(var1 x) = x in forget0 | x in forget1 | x in forget2;
+pred is_tree_constant(var1 x) = x in edge_0_1 | x in edge_0_2 | x in edge_1_2;
+pred all_ports_forgot(var1 x) = ex1 y0,y1,y2:  
+	(has_0(x) => y0 < x & y0 in forget0 ) &
+	(has_1(x) => y1 < x & y0 in forget1 ) &
+	(has_2(x) => y2 < x & y0 in forget2 ) ;
+
+pred incident0(var1 v, var1 e) = v < e & v in forget0 & has_0(e) & all1 x: (v<x & x<e) => ~x in forget0;
+pred incident1(var1 v, var1 e) = v < e & v in forget1 & has_1(e) & all1 x: (v<x & x<e) => ~ x in forget1;
+pred incident2(var1 v, var1 e) = v < e & v in forget2 & has_2(e) & all1 x: (v<x & x<e) => ~ x in forget2;
+pred incident(var1 v, var1 e) = incident0(v,e) | incident1(v,e) | incident2(v,e);
+#free predicates
+pred leaf(var1 x) = all1 y: (~x<y);
+pred universe1(var1 x) = leaf(x) | forget(x);
+pred domain() = all1 x:	defined(x) &
+			leaf(x) => is_tree_constant(x) & is_tree_constant(x) => leaf(x) &
+			leaf(x) => all_ports_forgot(x) &
+			forget(x) => x.1 in dummy & ex1 y: incident(y,x);
+
+
+#edge model
+pred universe2(var1 x) = leaf(x);
+pred edge(var1 u, var1 v) = ex1 e: incident(u,e) & incident(v,e);
+
+
+domain();
+# & all1 u: universe2(u) => ex1 v: edge(u,v);

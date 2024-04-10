@@ -1,0 +1,126 @@
+m2l-tree;
+#setup
+var2 fusion;
+#var2 dummy;
+
+
+
+var2 n0;
+
+var2 forget0,forget1,forget2,forget3,forget4;
+
+var2 n1;
+
+var2 edge_0_1,edge_0_2,edge_0_3,edge_0_4,edge_1_2,edge_1_3,edge_1_4,edge_2_3,edge_2_4,edge_3_4;
+
+var2 n2;
+
+var2 vertex_0,vertex_1,vertex_2,vertex_3,vertex_4;
+
+pred $U2(var2 X) = X sub forget0 union forget1 union forget2 union forget3 union forget4;
+pred $U1(var1 x) = $U2({x});
+
+assert fusion = {root.00000011111111, root.0000001111111, root.000000111111, root.00000011111, root.0000001111, root.000000111, root.00000011, root.0000001, root.000000, root.00000};
+assert forget0 = {root.000001, root};
+assert forget1 = {root.0000010, root.0};
+assert forget2 = {root.00000100, root.00};
+assert forget3 = {root.000001000, root.000};
+assert forget4 = {root.0000010000, root.0000};
+assert vertex_0 = {root.00000100000};
+assert empty(vertex_1);
+assert empty(vertex_2);
+assert empty(vertex_3);
+assert empty(vertex_4);
+assert edge_0_1 = {root.0000000};
+assert edge_0_2 = {root.00000010};
+assert edge_0_3 = {root.000000110};
+assert edge_0_4 = {root.0000001110};
+assert edge_1_2 = {root.00000011110};
+assert edge_1_3 = {root.000000111110};
+assert edge_1_4 = {root.0000001111110};
+assert edge_2_3 = {root.00000011111110};
+assert edge_2_4 = {root.000000111111110};
+assert edge_3_4 = {root.000000111111111};
+
+
+
+assert all1 x: (( x in fusion |  x in forget0 |  x in forget1 |  x in forget2 |  x in forget3 |  x in forget4 |  x in edge_0_1 |  x in edge_0_2 |  x in edge_0_3 |  x in edge_0_4 |  x in edge_1_2 |  x in edge_1_3 |  x in edge_1_4 |  x in edge_2_3 |  x in edge_2_4 |  x in edge_3_4 |  x in vertex_0 |  x in vertex_1 |  x in vertex_2 |  x in vertex_3 |  x in vertex_4))& ((x in fusion & x notin forget0 & x notin forget1 & x notin forget2 & x notin forget3 & x notin forget4 & x notin edge_0_1 & x notin edge_0_2 & x notin edge_0_3 & x notin edge_0_4 & x notin edge_1_2 & x notin edge_1_3 & x notin edge_1_4 & x notin edge_2_3 & x notin edge_2_4 & x notin edge_3_4 & x notin vertex_0 & x notin vertex_1 & x notin vertex_2 & x notin vertex_3 & x notin vertex_4) |
+			(x in forget0 & x notin fusion & x notin forget1 & x notin forget2 & x notin forget3 & x notin forget4 & x notin edge_0_1 & x notin edge_0_2 & x notin edge_0_3 & x notin edge_0_4 & x notin edge_1_2 & x notin edge_1_3 & x notin edge_1_4 & x notin edge_2_3 & x notin edge_2_4 & x notin edge_3_4 & x notin vertex_0 & x notin vertex_1 & x notin vertex_2 & x notin vertex_3 & x notin vertex_4) |
+			(x in forget1 & x notin fusion & x notin forget0 & x notin forget2 & x notin forget3 & x notin forget4 & x notin edge_0_1 & x notin edge_0_2 & x notin edge_0_3 & x notin edge_0_4 & x notin edge_1_2 & x notin edge_1_3 & x notin edge_1_4 & x notin edge_2_3 & x notin edge_2_4 & x notin edge_3_4 & x notin vertex_0 & x notin vertex_1 & x notin vertex_2 & x notin vertex_3 & x notin vertex_4) |
+			(x in forget2 & x notin fusion & x notin forget0 & x notin forget1 & x notin forget3 & x notin forget4 & x notin edge_0_1 & x notin edge_0_2 & x notin edge_0_3 & x notin edge_0_4 & x notin edge_1_2 & x notin edge_1_3 & x notin edge_1_4 & x notin edge_2_3 & x notin edge_2_4 & x notin edge_3_4 & x notin vertex_0 & x notin vertex_1 & x notin vertex_2 & x notin vertex_3 & x notin vertex_4) |
+			(x in forget3 & x notin fusion & x notin forget0 & x notin forget1 & x notin forget2 & x notin forget4 & x notin edge_0_1 & x notin edge_0_2 & x notin edge_0_3 & x notin edge_0_4 & x notin edge_1_2 & x notin edge_1_3 & x notin edge_1_4 & x notin edge_2_3 & x notin edge_2_4 & x notin edge_3_4 & x notin vertex_0 & x notin vertex_1 & x notin vertex_2 & x notin vertex_3 & x notin vertex_4) |
+			(x in forget4 & x notin fusion & x notin forget0 & x notin forget1 & x notin forget2 & x notin forget3 & x notin edge_0_1 & x notin edge_0_2 & x notin edge_0_3 & x notin edge_0_4 & x notin edge_1_2 & x notin edge_1_3 & x notin edge_1_4 & x notin edge_2_3 & x notin edge_2_4 & x notin edge_3_4 & x notin vertex_0 & x notin vertex_1 & x notin vertex_2 & x notin vertex_3 & x notin vertex_4) |
+			(x in edge_0_1 & x notin fusion & x notin forget0 & x notin forget1 & x notin forget2 & x notin forget3 & x notin forget4 & x notin edge_0_2 & x notin edge_0_3 & x notin edge_0_4 & x notin edge_1_2 & x notin edge_1_3 & x notin edge_1_4 & x notin edge_2_3 & x notin edge_2_4 & x notin edge_3_4 & x notin vertex_0 & x notin vertex_1 & x notin vertex_2 & x notin vertex_3 & x notin vertex_4) |
+			(x in edge_0_2 & x notin fusion & x notin forget0 & x notin forget1 & x notin forget2 & x notin forget3 & x notin forget4 & x notin edge_0_1 & x notin edge_0_3 & x notin edge_0_4 & x notin edge_1_2 & x notin edge_1_3 & x notin edge_1_4 & x notin edge_2_3 & x notin edge_2_4 & x notin edge_3_4 & x notin vertex_0 & x notin vertex_1 & x notin vertex_2 & x notin vertex_3 & x notin vertex_4) |
+			(x in edge_0_3 & x notin fusion & x notin forget0 & x notin forget1 & x notin forget2 & x notin forget3 & x notin forget4 & x notin edge_0_1 & x notin edge_0_2 & x notin edge_0_4 & x notin edge_1_2 & x notin edge_1_3 & x notin edge_1_4 & x notin edge_2_3 & x notin edge_2_4 & x notin edge_3_4 & x notin vertex_0 & x notin vertex_1 & x notin vertex_2 & x notin vertex_3 & x notin vertex_4) |
+			(x in edge_0_4 & x notin fusion & x notin forget0 & x notin forget1 & x notin forget2 & x notin forget3 & x notin forget4 & x notin edge_0_1 & x notin edge_0_2 & x notin edge_0_3 & x notin edge_1_2 & x notin edge_1_3 & x notin edge_1_4 & x notin edge_2_3 & x notin edge_2_4 & x notin edge_3_4 & x notin vertex_0 & x notin vertex_1 & x notin vertex_2 & x notin vertex_3 & x notin vertex_4) |
+			(x in edge_1_2 & x notin fusion & x notin forget0 & x notin forget1 & x notin forget2 & x notin forget3 & x notin forget4 & x notin edge_0_1 & x notin edge_0_2 & x notin edge_0_3 & x notin edge_0_4 & x notin edge_1_3 & x notin edge_1_4 & x notin edge_2_3 & x notin edge_2_4 & x notin edge_3_4 & x notin vertex_0 & x notin vertex_1 & x notin vertex_2 & x notin vertex_3 & x notin vertex_4) |
+			(x in edge_1_3 & x notin fusion & x notin forget0 & x notin forget1 & x notin forget2 & x notin forget3 & x notin forget4 & x notin edge_0_1 & x notin edge_0_2 & x notin edge_0_3 & x notin edge_0_4 & x notin edge_1_2 & x notin edge_1_4 & x notin edge_2_3 & x notin edge_2_4 & x notin edge_3_4 & x notin vertex_0 & x notin vertex_1 & x notin vertex_2 & x notin vertex_3 & x notin vertex_4) |
+			(x in edge_1_4 & x notin fusion & x notin forget0 & x notin forget1 & x notin forget2 & x notin forget3 & x notin forget4 & x notin edge_0_1 & x notin edge_0_2 & x notin edge_0_3 & x notin edge_0_4 & x notin edge_1_2 & x notin edge_1_3 & x notin edge_2_3 & x notin edge_2_4 & x notin edge_3_4 & x notin vertex_0 & x notin vertex_1 & x notin vertex_2 & x notin vertex_3 & x notin vertex_4) |
+			(x in edge_2_3 & x notin fusion & x notin forget0 & x notin forget1 & x notin forget2 & x notin forget3 & x notin forget4 & x notin edge_0_1 & x notin edge_0_2 & x notin edge_0_3 & x notin edge_0_4 & x notin edge_1_2 & x notin edge_1_3 & x notin edge_1_4 & x notin edge_2_4 & x notin edge_3_4 & x notin vertex_0 & x notin vertex_1 & x notin vertex_2 & x notin vertex_3 & x notin vertex_4) |
+			(x in edge_2_4 & x notin fusion & x notin forget0 & x notin forget1 & x notin forget2 & x notin forget3 & x notin forget4 & x notin edge_0_1 & x notin edge_0_2 & x notin edge_0_3 & x notin edge_0_4 & x notin edge_1_2 & x notin edge_1_3 & x notin edge_1_4 & x notin edge_2_3 & x notin edge_3_4 & x notin vertex_0 & x notin vertex_1 & x notin vertex_2 & x notin vertex_3 & x notin vertex_4) |
+			(x in edge_3_4 & x notin fusion & x notin forget0 & x notin forget1 & x notin forget2 & x notin forget3 & x notin forget4 & x notin edge_0_1 & x notin edge_0_2 & x notin edge_0_3 & x notin edge_0_4 & x notin edge_1_2 & x notin edge_1_3 & x notin edge_1_4 & x notin edge_2_3 & x notin edge_2_4 & x notin vertex_0 & x notin vertex_1 & x notin vertex_2 & x notin vertex_3 & x notin vertex_4) |
+			(x in vertex_0 & x notin fusion & x notin forget0 & x notin forget1 & x notin forget2 & x notin forget3 & x notin forget4 & x notin edge_0_1 & x notin edge_0_2 & x notin edge_0_3 & x notin edge_0_4 & x notin edge_1_2 & x notin edge_1_3 & x notin edge_1_4 & x notin edge_2_3 & x notin edge_2_4 & x notin edge_3_4 & x notin vertex_1 & x notin vertex_2 & x notin vertex_3 & x notin vertex_4) |
+			(x in vertex_1 & x notin fusion & x notin forget0 & x notin forget1 & x notin forget2 & x notin forget3 & x notin forget4 & x notin edge_0_1 & x notin edge_0_2 & x notin edge_0_3 & x notin edge_0_4 & x notin edge_1_2 & x notin edge_1_3 & x notin edge_1_4 & x notin edge_2_3 & x notin edge_2_4 & x notin edge_3_4 & x notin vertex_0 & x notin vertex_2 & x notin vertex_3 & x notin vertex_4) |
+			(x in vertex_2 & x notin fusion & x notin forget0 & x notin forget1 & x notin forget2 & x notin forget3 & x notin forget4 & x notin edge_0_1 & x notin edge_0_2 & x notin edge_0_3 & x notin edge_0_4 & x notin edge_1_2 & x notin edge_1_3 & x notin edge_1_4 & x notin edge_2_3 & x notin edge_2_4 & x notin edge_3_4 & x notin vertex_0 & x notin vertex_1 & x notin vertex_3 & x notin vertex_4) |
+			(x in vertex_3 & x notin fusion & x notin forget0 & x notin forget1 & x notin forget2 & x notin forget3 & x notin forget4 & x notin edge_0_1 & x notin edge_0_2 & x notin edge_0_3 & x notin edge_0_4 & x notin edge_1_2 & x notin edge_1_3 & x notin edge_1_4 & x notin edge_2_3 & x notin edge_2_4 & x notin edge_3_4 & x notin vertex_0 & x notin vertex_1 & x notin vertex_2 & x notin vertex_4) |
+			(x in vertex_4 & x notin fusion & x notin forget0 & x notin forget1 & x notin forget2 & x notin forget3 & x notin forget4 & x notin edge_0_1 & x notin edge_0_2 & x notin edge_0_3 & x notin edge_0_4 & x notin edge_1_2 & x notin edge_1_3 & x notin edge_1_4 & x notin edge_2_3 & x notin edge_2_4 & x notin edge_3_4 & x notin vertex_0 & x notin vertex_1 & x notin vertex_2 & x notin vertex_3));
+
+pred is_forget(var1 x) =  x in forget0 | x in forget1 | x in forget2 | x in forget3 | x in forget4;
+
+pred is_edge(var1 x)   = x in edge_0_1 | x in edge_0_2 | x in edge_0_3 | x in edge_0_4 | x in edge_1_2 | x in edge_1_3 | x in edge_1_4 | x in edge_2_3 | x in edge_2_4 | x in edge_3_4;
+
+pred is_vertex(var1 x) = x in vertex_0 | x in vertex_1 | x in vertex_2 | x in vertex_3 | x in vertex_4;
+
+pred is_tree_constant(var1 x) = is_vertex(x) | is_edge(x);
+
+pred has_0(var1 x) = x in edge_0_1 | x in edge_0_2 | x in edge_0_3 | x in edge_0_4  | x in vertex_0;
+pred has_1(var1 x) = x in edge_0_1 | x in edge_1_2 | x in edge_1_3 | x in edge_1_4  | x in vertex_1;
+pred has_2(var1 x) = x in edge_0_2 | x in edge_1_2 | x in edge_2_3 | x in edge_2_4  | x in vertex_2;
+pred has_3(var1 x) = x in edge_0_3 | x in edge_1_3 | x in edge_2_3 | x in edge_3_4  | x in vertex_3;
+pred has_4(var1 x) = x in edge_0_4 | x in edge_1_4 | x in edge_2_4 | x in edge_3_4  | x in vertex_4;
+
+pred forgets0(var1 v, var1 e) = v < e & is_tree_constant(e) & v in forget0 & has_0(e) & all1 x: (v<x & x<e) => x notin forget0;
+pred forgets1(var1 v, var1 e) = v < e & is_tree_constant(e) & v in forget1 & has_1(e) & all1 x: (v<x & x<e) => x notin forget1;
+pred forgets2(var1 v, var1 e) = v < e & is_tree_constant(e) & v in forget2 & has_2(e) & all1 x: (v<x & x<e) => x notin forget2;
+pred forgets3(var1 v, var1 e) = v < e & is_tree_constant(e) & v in forget3 & has_3(e) & all1 x: (v<x & x<e) => x notin forget3;
+pred forgets4(var1 v, var1 e) = v < e & is_tree_constant(e) & v in forget4 & has_4(e) & all1 x: (v<x & x<e) => x notin forget4;
+
+pred forgets(var1 v, var1 e) = forgets0(v,e) | forgets1(v,e) | forgets2(v,e) | forgets3(v,e) | forgets4(v,e);
+
+pred incident(var1 v, var1 e) = is_edge(e) & forgets(v,e);
+
+
+pred all_ports_forgot(var1 x) = ( is_edge(x) => ex1 y1,y2: y1~=y2 & forgets(y1,x) & forgets(y2,x) ) &
+				( is_vertex(x) => ex1 y: forgets(y,x) );
+
+
+
+#free predicates
+pred leaf(var1 x) = all1 y: (~x<y);
+
+
+
+pred domain() = all1 x:# defined(x) &
+			( leaf(x) <=> is_tree_constant(x) ) &
+			( leaf(x) => all_ports_forgot(x) ) &
+			( is_forget(x) => (all1 y: x.1 ~= y) )& 
+			( is_forget(x) => ex1 y: forgets(x,y) )&
+			( x in fusion => ex1 y0,y1: x.0 = y0 & x.1 = y1) ;
+
+
+
+pred universe1(var1 x) = is_tree_constant(x);
+pred universe2(var2 X) = all1 x where x in X: universe1(x);
+
+
+
+pred edge(var1 u, var1 v) = ex1 e: u~= v & incident(u,e) & incident(v,e);
+
+
+ 
+assert ex1 x,y: is_forget(x) & x<y;
+
+assert domain();
+
+ex1 x,y,z,u,v where $U1( x) & $U1(y) & $U1(z) & $U1(u) & $U1(v) : (x~=y) & (y~=z) & (z ~=u) & (u~=v) &(v~=x);
