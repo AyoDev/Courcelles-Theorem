@@ -1,22 +1,6 @@
-assert fusion = {root.00000011111111, root.0000001111111, root.000000111111, root.00000011111, root.0000001111, root.000000111, root.00000011, root.0000001, root.000000, root.00000};
-assert forget0 = {root.000001, root};
-assert forget1 = {root.0000010, root.0};
-assert forget2 = {root.00000100, root.00};
-assert forget3 = {root.000001000, root.000};
-assert forget4 = {root.0000010000, root.0000};
-assert vertex_0 = {root.00000100000};
-assert empty(vertex_1);
-assert empty(vertex_2);
-assert empty(vertex_3);
-assert empty(vertex_4);
-assert edge_0_1 = {root.0000000};
-assert edge_0_2 = {root.00000010};
-assert edge_0_3 = {root.000000110};
-assert edge_0_4 = {root.0000001110};
-assert edge_1_2 = {root.00000011110};
-assert edge_1_3 = {root.000000111110};
-assert edge_1_4 = {root.0000001111110};
-assert edge_2_3 = {root.00000011111110};
-assert edge_2_4 = {root.000000111111110};
-assert edge_3_4 = {root.000000111111111};
+$ = {root, root.0, root.00, root.000, root.001, root.0010, root.00100, root.00101, root.001010, root.0010100, root.0010101, root.00101010};
+assert bit1 = {root.001010, root.0010, root.00};
+assert bit2 = {root.00101010, root.0010100, root.001010, root.00100, root.0010, root.000, root.00};
+assert num1_bit0 = {root.00101, root.0};
+assert num2_bit0 = {root.00101010, root.0010100, root.00100, root.000};
 

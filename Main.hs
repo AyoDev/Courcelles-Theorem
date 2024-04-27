@@ -32,5 +32,5 @@ main = do
 --	print "----- yo ---- "
 --	print $ gc
 --	putStrLn $ Tree.drawTree $ tree $ td
+	putStrLn $ makeCode' (td,".")
 	putStrLn $ toMona k td
-
